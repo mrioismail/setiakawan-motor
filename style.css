@@ -1,0 +1,237 @@
+:root {
+   --primary-dark: #0f172a;
+   --accent-gold: #fbbf24;
+   --soft-blue: #f8fafc;
+   --text-dark: #1e293b;
+   --text-light: #64748b;
+   --white: #ffffff;
+   --danger: #ef4444;
+   --success: #10b981;
+}
+
+body {
+   font-family: 'Plus Jakarta Sans', sans-serif;
+   background-color: #f1f5f9;
+   color: var(--text-dark);
+   margin: 0;
+   padding: 0;
+   -webkit-tap-highlight-color: transparent;
+}
+
+.app-container {
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 20px 15px 100px 15px;
+}
+
+.app-header {
+   padding: 30px 0;
+   text-align: center;
+}
+
+.app-header h1 {
+   font-size: 22px;
+   font-weight: 700;
+   color: var(--primary-dark);
+   margin: 0;
+   letter-spacing: -0.5px;
+}
+
+.app-header p {
+   font-size: 14px;
+   color: var(--text-light);
+   margin-top: 5px;
+}
+
+.card {
+   background: var(--white);
+   border-radius: 20px;
+   padding: 20px;
+   margin-bottom: 20px;
+   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+   border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.card-title {
+   font-size: 14px;
+   font-weight: 700;
+   color: var(--primary-dark);
+   margin-bottom: 18px;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+}
+
+.card-title::before {
+   content: '';
+   width: 4px;
+   height: 16px;
+   background: var(--accent-gold);
+   border-radius: 10px;
+}
+
+.input-group {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 15px;
+}
+
+label {
+   font-size: 12px;
+   font-weight: 600;
+   color: var(--text-light);
+   margin-bottom: 6px;
+   margin-left: 4px;
+}
+
+input,
+select {
+   background: #f8fafc;
+   border: 1.5px solid #e2e8f0;
+   border-radius: 12px;
+   padding: 12px 16px;
+   font-size: 15px;
+   font-family: inherit;
+   transition: all 0.2s ease;
+}
+
+input:focus {
+   outline: none;
+   border-color: var(--accent-gold);
+   background: var(--white);
+   box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
+}
+
+.grid {
+   display: grid;
+   gap: 15px;
+}
+
+@media (min-width: 600px) {
+   .grid-2 {
+      grid-template-columns: 1fr 1fr;
+   }
+   .grid-header {
+      grid-template-columns: 1fr 1.5fr 0.8fr;
+   }
+}
+
+.btn {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 14px;
+   border-radius: 14px;
+   font-weight: 700;
+   font-size: 14px;
+   cursor: pointer;
+   transition: all 0.2s;
+   border: none;
+   gap: 8px;
+}
+
+.btn-primary {
+   background: var(--primary-dark);
+   color: var(--white);
+   width: 100%;
+}
+
+.btn-danger-outline {
+   background: transparent;
+   color: var(--danger);
+   border: 1.5px solid var(--danger);
+   padding: 8px 12px;
+   font-size: 12px;
+   border-radius: 10px;
+}
+
+.btn-edit-outline {
+   background: transparent;
+   color: var(--primary-dark);
+   border: 1.5px solid var(--primary-dark);
+   padding: 8px 12px;
+   font-size: 12px;
+   border-radius: 10px;
+}
+
+.btn-editing {
+   background: var(--accent-gold) !important;
+   color: var(--primary-dark) !important;
+}
+
+.btn-cancel-edit {
+   background: #e2e8f0;
+   color: var(--text-dark);
+   flex: 0 0 auto;
+   padding: 14px 18px;
+}
+
+.data-item {
+   background: #ffffff;
+   border-radius: 15px;
+   padding: 15px;
+   margin-bottom: 16px;
+   border: 1px solid #e2e8f0;
+}
+
+.kode-tag {
+   display: inline-block;
+   padding: 4px 10px;
+   background: #eff6ff;
+   color: #1d4ed8;
+   border-radius: 8px;
+   font-family: monospace;
+   font-weight: 700;
+   font-size: 13px;
+}
+
+.export-footer {
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   padding: 20px;
+   background: rgba(255, 255, 255, 0.8);
+   backdrop-filter: blur(10px);
+   border-top: 1px solid #e2e8f0;
+   display: flex;
+   justify-content: center;
+   z-index: 100;
+}
+
+.btn-export {
+   background: var(--success);
+   color: var(--white);
+   max-width: 400px;
+   width: 100%;
+}
+
+.dev-credit {
+   text-align: center;
+   margin-top: 40px;
+   padding-bottom: 30px;
+   font-size: 13px;
+   color: var(--text-light);
+}
+
+.dev-link {
+   color: var(--primary-dark);
+   text-decoration: none;
+   font-weight: 700;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(10px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+.animate-in {
+   animation: fadeIn 0.3s ease forwards;
+}

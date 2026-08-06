@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Setia Kawan Motor - Data Engine</title>
+      <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="style.css" />
+
+   </head>
+   <body>
+      <div class="app-container">
+         <div class="app-header">
+            <h1>Setia Kawan Motor</h1>
+            <p>Halo, selamat bekerja! Silakan kelola data barang Anda.</p>
+         </div>
+
+         <div class="card animate-in">
+            <div class="card-title">Informasi Supplier</div>
+            <div class="grid grid-header">
+               <div class="input-group">
+                  <label>Bulan & Tahun</label>
+                  <select id="periode">
+                     <option value="2026-01">Januari 2026</option>
+                     <option value="2026-02">Februari 2026</option>
+                     <option value="2026-03">Maret 2026</option>
+                     <option value="2026-04">April 2026</option>
+                     <option value="2026-05">Mei 2026</option>
+                     <option value="2026-06">Juni 2026</option>
+                     <option value="2026-07">Juli 2026</option>
+                     <option value="2026-08">Agustus 2026</option>
+                     <option value="2026-09">September 2026</option>
+                     <option value="2026-10">Oktober 2026</option>
+                     <option value="2026-11">November 2026</option>
+                     <option value="2026-12">Desember 2026</option>
+                  </select>
+               </div>
+               <div class="input-group">
+                  <label>Nama Supplier</label>
+                  <input type="text" id="supplier" placeholder="SETIA KAWAN MOTOR" oninput="this.value = this.value.toUpperCase()" />
+               </div>
+               <div class="input-group">
+                  <label>Singkatan</label>
+                  <input type="text" id="singkatan" placeholder="SKM" oninput="this.value = this.value.toUpperCase()" />
+               </div>
+            </div>
+         </div>
+
+         <div class="card animate-in" style="animation-delay: 0.1s">
+            <div class="card-title">Input Detail Barang</div>
+            <div class="grid grid-2">
+               <div class="input-group">
+                  <label>Nama Barang</label>
+                  <input type="text" id="namaBarang" placeholder="BAN LUAR" oninput="this.value = this.value.toUpperCase()" />
+               </div>
+               <div class="input-group">
+                  <label>Jenis / Kategori</label>
+                  <input type="text" id="jenisBarang" placeholder="SPAREPART" oninput="this.value = this.value.toUpperCase()" />
+               </div>
+               <div class="input-group">
+                  <label>Harga Satuan (Rp)</label>
+                  <input type="number" id="harga" placeholder="0" />
+               </div>
+               <div class="input-group">
+                  <label>Jumlah Barang (Qty)</label>
+                  <input type="number" id="qty" placeholder="1" />
+               </div>
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 10px">
+               <button class="btn btn-primary" id="btnSimpanBarang" onclick="tambahBarang()" style="flex: 1">Simpan ke Daftar Barang</button>
+               <button class="btn btn-cancel-edit" id="cancelEditBtn" onclick="batalEdit()" style="display: none">Batal</button>
+            </div>
+         </div>
+
+         <div class="card animate-in" style="animation-delay: 0.2s">
+            <div class="card-title">Pratinjau Daftar Barang</div>
+            <div id="emptyState" style="text-align: center; padding: 30px; color: var(--text-light); font-size: 14px">Belum ada barang yang ditambahkan.</div>
+            <div id="dataListContainer"></div>
+         </div>
+
+         <div class="dev-credit">
+            Crafted with care by
+            <a href="https://wa.me/6282354884444" target="_blank" class="dev-link">Rionel</a>
+         </div>
+      </div>
+
+      <div class="export-footer">
+         <button class="btn btn-export" onclick="exportExcel()">Export Ke Excel (.xlsx)</button>
+      </div>
+
+      <script src="script.js"></script>
+   </body>
+</html>
